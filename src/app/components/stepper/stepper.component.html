@@ -1,0 +1,31 @@
+<div class="stepper-content">
+    <div class="stepper-body">
+        <button *ngIf="isFirstStep" class="stepper-button-container disable" disabled> 
+            &#60;
+        </button>
+        <button *ngIf="!isFirstStep" class="stepper-button-container" [ngClass]="{'disable' : !canPreviousStep}" (click)="previousStep()">
+            &#60;
+        </button>
+        <div class="step-body-container">
+            <div class="step-detail">
+                <p>
+                    {{currentStep + 1}}. {{steps[currentStep]}}
+                </p>
+            </div>
+            <div class="step-counter">
+                <p>
+                    <span class="current-step-bold">{{currentStep + 1}}</span> de {{steps.length}}
+                </p>
+            </div>
+        </div>
+        <button *ngIf="isLastStep" class="stepper-button-container disable" disabled>
+            &#62;
+        </button>
+        <button *ngIf="!isLastStep" class="stepper-button-container" [ngClass]="{'disable' : !canNextStep}" (click)="nextStep()">
+            &#62;
+        </button>
+    </div>
+    <div class="stepper-progress-bar">
+        <app-progress-bar [progress]="progress"></app-progress-bar>
+    </div>
+</div>

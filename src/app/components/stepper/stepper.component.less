@@ -1,0 +1,80 @@
+@primary-color: #9A92FF;
+
+@button-secondary-dark-background: #222222;
+@button-secondary-dark-color: @primary-color;
+@button-disable-color: #ACABAF;
+@button-stepper-width: 48px;
+
+@progressbar-background: #E3E1E6;
+@progressbar-color: @primary-color;
+
+@stepper-height: 48px;
+@sm-space: 8px;
+@stepper-primary-background: #303033;
+@stepper-primary-color: #77767A;
+@stepper-primary-color-detail: #ffffff;
+@stepper-primary-color-bold: @primary-color;
+
+.stepper-content {
+    height: 100%;
+}
+
+.stepper-body {
+    display: flex;
+    height: @stepper-height;
+}
+
+.step-body-container {
+    width: calc(100% - @button-stepper-width - @button-stepper-width);
+    display: flex;
+    background-color: @stepper-primary-background;
+    
+    .step-detail {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding-left: @sm-space;
+        font-size: 18px;
+        font-weight: 400;
+        color: @stepper-primary-color-detail;
+    }
+    .step-counter {
+        width: 56px;
+        padding: 0 @sm-space;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: @stepper-primary-color;
+
+        .current-step-bold {
+            color: @stepper-primary-color-bold;
+            font-weight: 700;
+        }
+    }
+}
+
+p { margin: 0;}
+
+// #region Stepper Buttons
+.stepper-button-container {
+    background-color: @button-secondary-dark-background;
+    color: @button-secondary-dark-color;
+    width: @button-stepper-width;   
+    text-align: center;
+}
+
+.stepper-button-container.disable {
+    color: @button-disable-color;
+}
+// #endregion
+
+// #region Stepper Buttons
+::ng-deep .mat-progress-bar-element {
+    background-color: @progressbar-background;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+    background-color: @progressbar-color;
+}
+// #endregion

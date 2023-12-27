@@ -1,0 +1,25 @@
+<div class="home-container">
+    <div class="stepper-container">
+        <app-stepper [steps]="steps" [(currentStep)]="currentStep" [canPreviousStep]="canPreviousStep" [canNextStep]="canNextStep"></app-stepper>
+    </div>
+
+    <p>Current Step: {{currentStep}}</p>
+    <div>
+        <button (click)="previousStep()">Previous</button>
+        <button (click)="resetSteps()">Reset</button>
+        <button (click)="nextStep()">Next</button>
+    </div>
+    
+    <p>Previous Step: {{canPreviousStep}}</p>
+    <div>
+        <button (click)="changeCanPreviousStep()">Change Previous Step</button>
+        
+    </div>
+
+    <p>Next Step: {{canNextStep}}</p>
+    <div>
+        <button (click)="changeCanNextStep()">Change Next Step</button>
+        
+    </div>
+</div>
+

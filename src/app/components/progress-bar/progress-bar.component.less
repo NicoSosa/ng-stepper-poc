@@ -1,0 +1,16 @@
+@primary-color: #9A92FF;
+@progressbar-background: #E3E1E6;
+
+.progress-container {
+    width: 100%;
+    background-color: @progressbar-background;
+    height: 4px;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    text-align: center;
+    background-color: @primary-color;
+    width: 0%;
+    transition: width 0.3s ease-out;
+  }
